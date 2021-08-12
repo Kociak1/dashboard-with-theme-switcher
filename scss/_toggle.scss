@@ -1,0 +1,43 @@
+$Toggle: hsl(230, 22%, 74%);
+
+.box {
+  background: $Toggle;
+  width: 4rem;
+  height: 2rem;
+  border-radius: 1rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0.3rem;
+  input {
+    display: none;
+  }
+  .circle {
+    background: var(--White-BG);
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 1rem;
+  }
+  input:checked + .circle {
+    margin-left: 0;
+    margin-right: auto;
+  }
+  &:hover {
+    cursor: pointer;
+    background: linear-gradient(
+      to right,
+      hsl(210, 78%, 56%),
+      hsl(146, 68%, 55%)
+    );
+  }
+}
+body.dark {
+  .box {
+    background: linear-gradient(
+      to right,
+      hsl(210, 78%, 56%),
+      hsl(146, 68%, 55%)
+    );
+  }
+}

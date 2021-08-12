@@ -1,0 +1,330 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+.box {
+  background: #aeb3cb;
+  width: 4rem;
+  height: 2rem;
+  border-radius: 1rem;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 0.3rem;
+}
+
+.box input {
+  display: none;
+}
+
+.box .circle {
+  background: var(--White-BG);
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 1rem;
+}
+
+.box input:checked + .circle {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.box:hover {
+  cursor: pointer;
+  background: -webkit-gradient(linear, left top, right top, from(#378fe6), to(#3eda82));
+  background: linear-gradient(to right, #378fe6, #3eda82);
+}
+
+body.dark .box {
+  background: -webkit-gradient(linear, left top, right top, from(#378fe6), to(#3eda82));
+  background: linear-gradient(to right, #378fe6, #3eda82);
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.fb {
+  background: #198ff5;
+}
+
+.tw {
+  background: #1ca0f2;
+}
+
+.ins {
+  background: -webkit-gradient(linear, left top, right top, from(#fdc468), to(#df4996));
+  background: linear-gradient(to right, #fdc468, #df4996);
+}
+
+.yt {
+  background: #c4032a;
+}
+
+.cursor {
+  color: #1db489;
+  font-weight: bold;
+}
+
+.cursor-bad {
+  color: #dc414c;
+  font-weight: bold;
+}
+
+:root {
+  --White-BG: hsl(0, 0%, 100%);
+  --Very-Pale-Blue-Top-BG-Pattern: hsl(225, 100%, 98%);
+  --Light-Grayish-Blue-Card-BG: hsl(227, 47%, 96%);
+  --Dark-Grayish-Blue-Text: hsl(228, 12%, 44%);
+  --Very-Dark-Blue-Text: hsl(230, 17%, 14%);
+  --card-hover: hsl(232, 33%, 91%);
+  --overview: hsl(228, 12%, 44%);
+  --border: hsl(230, 17%, 14%);
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  background: var(--White-BG);
+  padding: 2rem 1.4rem;
+  color: var(--Very-Dark-Blue-Text);
+}
+
+header h3 {
+  font-size: 1.563rem;
+  color: var(--Very-Dark-Blue-Text);
+  font-weight: bold;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+header h3 span {
+  font-size: 1rem;
+  color: var(--Dark-Grayish-Blue-Text);
+}
+
+header .mode {
+  padding: 1rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .mode label {
+  color: var(--Dark-Grayish-Blue-Text);
+  font-weight: bold;
+}
+
+main .follows .card {
+  margin-top: 1.4rem;
+  background: var(--Light-Grayish-Blue-Card-BG);
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+  border-radius: 0.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  padding-bottom: 2rem;
+}
+
+main .follows .card:hover {
+  background: var(--card-hover);
+  cursor: pointer;
+}
+
+main .follows .card .icon {
+  padding-top: 2rem;
+  font-weight: bold;
+  color: var(--Dark-Grayish-Blue-Text);
+}
+
+main .follows .card div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.25rem;
+}
+
+main .follows .card .top {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  top: 0;
+}
+
+main .follows .card h3 {
+  font-size: 3.052rem;
+  text-align: center;
+  line-height: 2rem;
+}
+
+main .follows .card h3 span {
+  position: relative;
+  font-size: initial;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+  color: var(--Dark-Grayish-Blue-Text);
+}
+
+article .h3 {
+  color: var(--overview);
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+article .card {
+  margin-top: 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: start;
+  padding: 1.3rem 1.5rem;
+  gap: 1.3rem;
+  background: var(--Light-Grayish-Blue-Card-BG);
+  border-radius: 0.5rem;
+}
+
+article .card:hover {
+  background: var(--card-hover);
+  cursor: pointer;
+}
+
+article .card img,
+article .card .cursor,
+article .card .cursor-bad {
+  margin-left: auto;
+  margin-right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.25rem;
+}
+
+article .card h3 {
+  font-size: 1.953rem;
+}
+
+article .card p {
+  font-weight: bold;
+  color: var(--Dark-Grayish-Blue-Text);
+}
+
+@media (min-width: 1440px) {
+  body {
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .container {
+    width: 70vw;
+  }
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  header h3 {
+    border-color: transparent;
+  }
+  header label {
+    margin-right: 1rem;
+  }
+  .card {
+    margin: 0;
+  }
+  .follows {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  .grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  article .grid .card {
+    margin: 0;
+  }
+  .back {
+    position: absolute;
+    top: 0;
+    height: 40vh;
+    width: 100%;
+    background: var(--Very-Pale-Blue-Top-BG-Pattern);
+    left: 0;
+    z-index: -1;
+  }
+}
+
+.dark {
+  --White-BG: hsl(230, 17%, 14%);
+  --Very-Pale-Blue-Top-BG-Pattern: hsl(232, 19%, 15%);
+  --Light-Grayish-Blue-Card-BG: hsl(228, 28%, 20%);
+  --Dark-Grayish-Blue-Text: hsl(228, 34%, 66%);
+  --Very-Dark-Blue-Text: hsl(0, 0%, 100%);
+  --card-hover: hsl(226, 26%, 27%);
+  --overview: hsl(0, 0%, 100%);
+  --border: hsl(228, 34%, 66%);
+  /*Very Dark Blue (BG): hsl(230, 17%, 14%)
+- Very Dark Blue (Top BG Pattern): hsl(232, 19%, 15%)
+- Dark Desaturated Blue (Card BG): hsl(228, 28%, 20%)
+- Desaturated Blue (Text): hsl(228, 34%, 66%)
+- White (Text): hsl(0, 0%, 100%)*/
+}
+/*# sourceMappingURL=style.css.map */

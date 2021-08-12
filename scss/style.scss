@@ -1,0 +1,244 @@
+@import "./toggle";
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+$Lime-Green: hsl(163, 72%, 41%);
+$Bright-Red: hsl(356, 69%, 56%);
+
+$Facebook: hsl(208, 92%, 53%);
+$Twitter: hsl(203, 89%, 53%);
+$Instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+$YouTube: hsl(348, 97%, 39%);
+.fb {
+  background: $Facebook;
+}
+
+.tw {
+  background: $Twitter;
+}
+
+.ins {
+  background: $Instagram;
+}
+.yt {
+  background: $YouTube;
+}
+.cursor {
+  color: $Lime-Green;
+  font-weight: bold;
+}
+.cursor-bad {
+  color: $Bright-Red;
+  font-weight: bold;
+}
+:root {
+  --White-BG: hsl(0, 0%, 100%);
+  --Very-Pale-Blue-Top-BG-Pattern: hsl(225, 100%, 98%);
+  --Light-Grayish-Blue-Card-BG: hsl(227, 47%, 96%);
+  --Dark-Grayish-Blue-Text: hsl(228, 12%, 44%);
+  --Very-Dark-Blue-Text: hsl(230, 17%, 14%);
+  --card-hover: hsl(232, 33%, 91%);
+  --overview: hsl(228, 12%, 44%);
+  --border: hsl(230, 17%, 14%);
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  background: var(--White-BG);
+  padding: 2rem 1.4rem;
+  color: var(--Very-Dark-Blue-Text);
+}
+
+header {
+  h3 {
+    font-size: 1.563rem;
+    color: var(--Very-Dark-Blue-Text);
+    font-weight: bold;
+    span {
+      font-size: 1rem;
+      color: var(--Dark-Grayish-Blue-Text);
+    }
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .mode {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    label {
+      color: var(--Dark-Grayish-Blue-Text);
+      font-weight: bold;
+    }
+  }
+}
+
+main {
+  .follows {
+    .card {
+      margin-top: 1.4rem;
+      background: var(--Light-Grayish-Blue-Card-BG);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      border-radius: 0.5rem;
+      align-items: center;
+      overflow: hidden;
+      padding-bottom: 2rem;
+      &:hover {
+        background: var(--card-hover);
+        cursor: pointer;
+      }
+
+      .icon {
+        padding-top: 2rem;
+        font-weight: bold;
+        color: var(--Dark-Grayish-Blue-Text);
+      }
+
+      div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.25rem;
+      }
+      .top {
+        position: absolute;
+        width: 100%;
+        height: 5px;
+        top: 0;
+      }
+
+      h3 {
+        font-size: 3.052rem;
+        text-align: center;
+        line-height: 2rem;
+        span {
+          position: relative;
+          font-size: initial;
+          font-weight: normal;
+          text-transform: uppercase;
+          letter-spacing: 0.4rem;
+          color: var(--Dark-Grayish-Blue-Text);
+        }
+      }
+    }
+  }
+}
+
+article {
+  .h3 {
+    color: var(--overview);
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  .card {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-items: start;
+    padding: 1.3rem 1.5rem;
+    gap: 1.3rem;
+    background: var(--Light-Grayish-Blue-Card-BG);
+    border-radius: 0.5rem;
+    &:hover {
+      background: var(--card-hover);
+      cursor: pointer;
+    }
+    img,
+    .cursor,
+    .cursor-bad {
+      margin-left: auto;
+      margin-right: 0;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    h3 {
+      font-size: 1.953rem;
+    }
+    p {
+      font-weight: bold;
+      color: var(--Dark-Grayish-Blue-Text);
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .container {
+    width: 70vw;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    h3 {
+      border-color: transparent;
+    }
+    label {
+      margin-right: 1rem;
+    }
+  }
+  .card {
+    margin: 0;
+  }
+  .follows {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  article {
+    .grid {
+      .card {
+        margin: 0;
+      }
+    }
+  }
+  .back {
+    position: absolute;
+    top: 0;
+    height: 40vh;
+    width: 100%;
+    background: var(--Very-Pale-Blue-Top-BG-Pattern);
+    left: 0;
+    z-index: -1;
+  }
+}
+.dark {
+  --White-BG: hsl(230, 17%, 14%);
+
+  --Very-Pale-Blue-Top-BG-Pattern: hsl(232, 19%, 15%);
+  --Light-Grayish-Blue-Card-BG: hsl(228, 28%, 20%);
+  --Dark-Grayish-Blue-Text: hsl(228, 34%, 66%);
+  --Very-Dark-Blue-Text: hsl(0, 0%, 100%);
+  --card-hover: hsl(226, 26%, 27%);
+  --overview: hsl(0, 0%, 100%);
+  --border: hsl(228, 34%, 66%);
+  /*Very Dark Blue (BG): hsl(230, 17%, 14%)
+- Very Dark Blue (Top BG Pattern): hsl(232, 19%, 15%)
+- Dark Desaturated Blue (Card BG): hsl(228, 28%, 20%)
+- Desaturated Blue (Text): hsl(228, 34%, 66%)
+- White (Text): hsl(0, 0%, 100%)*/
+}
